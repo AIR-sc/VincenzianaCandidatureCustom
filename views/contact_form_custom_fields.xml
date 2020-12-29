@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_custom_recruitment_button" model="ir.ui.view">
+            <field name="name">form_custom_recruitment_button</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job" />
+             <field name="arch" type="xml">
+                 <xpath expr="//button[@name='create_employee_from_applicant']" position="after">
+                        <button name="create_res_partner_only" string="Crea il contatto"
+                        type="object" attrs="{'invisible': ['|',('partner_id', '!=', False),('active', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//button[@name='create_employee_from_applicant']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+   </data>
+</odoo>
