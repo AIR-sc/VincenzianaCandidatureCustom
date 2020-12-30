@@ -8,7 +8,7 @@ class hr_applicant_create_contact(models.Model):
     #_name = 'vincenziana.createcontact'
     #_description = 'Crea il contatto'
 
-    @api.multi
+    #@api.multi
     def create_res_partner_only(self):
         """ Create only partner from the hr.applicants """
         partner_id = 0
